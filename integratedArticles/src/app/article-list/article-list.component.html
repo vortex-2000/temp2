@@ -1,0 +1,43 @@
+
+<div class = "container">
+    <!-- <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>ACTIONS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let article of articles" >
+                <td>{{article.id}}</td>
+                <td>{{article.title}}</td>
+                <td>{{article.category}}</td>
+                <td><button type="button" class="btn btn-warning" (click)="editArticle(article)" value="{{article.id}}" id="{{article.id}}" name="id" >EDIT</button>
+                <button type="button" class="btn btn-danger" (click)="deleteArticle(article.id)" >DELETE</button></td>
+            </tr>
+
+        </tbody>
+    </table> -->
+    <div class="row">
+        <div class="col-sm">
+            <div *ngFor="let article of articles" >
+                <div class="card" style="width: 18rem; margin-bottom: 10px;">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">{{article.id}}</li>
+                      <li class="list-group-item">{{article.title}}</li>
+                      <li class="list-group-item">{{article.category}}</li>
+                      <button type="button" class="btn btn-warning" (click)="editArticle(article)" value="{{article.id}}" id="{{article.id}}" name="id" >EDIT</button>
+                     <button type="button" class="btn btn-danger" (click)="deleteArticle(article.id)" >DELETE</button>
+                    </ul>
+                  </div>
+                </div>
+        </div>
+    </div>
+    
+</div>
+
+
+
+

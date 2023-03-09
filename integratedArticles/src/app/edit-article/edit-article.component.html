@@ -1,0 +1,43 @@
+<div class="container">
+   
+  
+   
+    <form #articleForm="ngForm" (ngSubmit)="edit(articleForm.value)"> 
+
+        <!-- <form #articleForm="ngForm" (ngSubmit)="submitData(articleForm.value)"> WITHOUT 2 WAY DATA BINDING --> 
+      
+      
+      <div class="form-group"  >
+
+      
+      
+        
+        <label for="id">ID</label>
+        <input class="disable" type="text"  placeholder="{{articleModel.id}}" #myId="ngModel"  class="form-control w-50" required name="id" [(ngModel)]="id" [class.is-invalid]="myId.touched && myId.invalid" >
+        </div>
+      
+        <div class="form-group"> 
+          <label for="title">Enter Title</label>
+          <input type="title" placeholder="{{articleModel.title}}"  #myTitle="ngModel" class="form-control w-50" required name="title" [(ngModel)]="title" [class.is-invalid]="myTitle.touched && myTitle.invalid">
+        </div>
+      
+        <div *ngIf="myTitle.touched && myTitle.invalid">
+          <small class="text-danger" *ngIf="myTitle.errors?.['required']">Title required</small>
+        </div>
+      
+        <!-- {{myName.className}}
+        {{myName.touched}}
+        {{myName.dirty}} -->
+      
+      <div class="form-group"> 
+        <label for="category">Enter category</label>
+        <input type="text" placeholder="{{articleModel.category}}" value="{{articleModel.category}}"  #myCategory="ngModel" class="form-control w-50"  required name="category" [(ngModel)]="category" [class.is-invalid]="myCategory.touched && myCategory.invalid">
+      </div>
+      
+
+      
+       
+        <input [disabled]="articleForm.form.invalid"   type="submit" class="btn btn-primary" value="Update">
+      </form>
+</div>
+
